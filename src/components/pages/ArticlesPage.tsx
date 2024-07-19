@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Articles = () => {
+const ArticlesPage = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default Articles;
+export default ArticlesPage;

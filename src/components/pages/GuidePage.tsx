@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Article = () => {
+const GuidePage = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Article = () => {
     );
 };
 
-export default Article;
+export default GuidePage;
