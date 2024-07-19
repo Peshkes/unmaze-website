@@ -1,0 +1,52 @@
+.burgerIcon {
+    cursor: pointer;
+    width: 20px;
+    height: 14px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.burgerIcon > div {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.burgerTop, .burgerBottom {
+    transform-origin: center;
+}
+
+.burgerTop {
+    top: 0;
+    transform: translateY(0) rotate(0);
+}
+
+.burgerMiddle {
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+}
+
+.burgerBottom {
+    bottom: 0;
+    transform: translateY(0) rotate(0);
+}
+
+.burgerIcon.open .burgerTop {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.burgerIcon.open .burgerMiddle {
+    opacity: 0;
+}
+
+.burgerIcon.open .burgerBottom {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (min-width: 1000px) {
+    .burgerIcon {
+        display: none;
+    }
+}
