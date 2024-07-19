@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+:root{
+    --tablet: 768px;
+    --desktop: 1220px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2{
+    font-size: 29px;
+    font-weight: normal;
+    margin: 0 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper{
+    padding: 0 15px;
+    margin-top: 25px
 }
 
-.App-link {
-  color: #61dafb;
+.button{
+    position: relative;
+    height: 26px;
+    min-width: 180px;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-transform: none;
+    cursor: pointer;
+    margin: 20px auto 0;
+    padding: 5px 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button .arrow {
+    position: absolute;
+    right: 25px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.button:hover .arrow, .button:active .arrow {
+    animation: moveArrow 0.6s infinite alternate;
+}
+
+.button:active .arrow {
+    animation: moveAway 1.2s ease-in-out;
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-5px);
+    }
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p, h3, li{
+    font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    h1, h2{
+        font-size: 50px;
+        margin: 0 0 30px;
+    }
+
+    .wrapper{
+        padding: 0 30px;
+        margin-top: 50px
+    }
+
+    .button{
+        font-size: 16px;
+        padding: 10px 55px;
+        margin-top: 30px;
+    }
+
+    @keyframes moveArrow {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-10px);
+        }
+    }
+
+    p, h3, li{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+}
+
+@media screen and (min-width: 1220px) {
+    h1, h2{
+        font-size: 90px;
+        margin: 0 0 50px;
+    }
+
+    .wrapper{
+        padding: 0 55px;
+        margin-top: 70px
+    }
+
+    .button{
+        font-size: 19px;
+        padding: 15px 90px;
+        margin-top: 50px;
+    }
+
+    p, h3, li{
+        font-size: 22px;
+    }
+
+    @keyframes moveArrow {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-15px);
+        }
+    }
 }
