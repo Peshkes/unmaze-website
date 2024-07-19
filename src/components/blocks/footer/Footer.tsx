@@ -3,7 +3,7 @@ import style from './footer.module.css'
 
 const Footer = () => {
     return (
-        <div>
+        <div id={'footer'} className={`${style.block} wrapper`}>
 
         </div>
     );

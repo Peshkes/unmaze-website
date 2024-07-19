@@ -1,9 +1,10 @@
 import React from 'react';
 import style from './howDetect.module.css'
+import {Link} from "react-router-dom";
 
 const HowDetect = () => {
     return (
-        <div className={`${style.block} wrapper`}>
+        <div id={'dyslexia'} className={`${style.block} wrapper`}>
             <h2>Как выявить дислексию у ребенка?</h2>
             <div className={style.child}>
                 <div className={style.container}>
@@ -27,7 +28,7 @@ const HowDetect = () => {
                 </div>
             </div>
             <div className={"button"}>
-                <a href="#">Пройти тест<span className="arrow">→</span></a>
+                <Link to="/test">Пройти тест<span className="arrow">→</span></Link>
             </div>
         </div>
     );

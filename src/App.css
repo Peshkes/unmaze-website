@@ -3,6 +3,10 @@
     --desktop: 1220px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Manrope', sans-serif;
     text-transform: uppercase;

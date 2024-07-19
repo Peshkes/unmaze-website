@@ -12,7 +12,7 @@ const HeaderList = () => {
             <div className={style.centerLinks}>
                 <a className={style.navLink} href='#aboutus'>{t('header.aboutUs')}</a>
                 <a className={style.navLink} href='#dyslexia'>{t('header.dyslexia')}</a>
-                <a className={style.navLink} href='#test'>{t('header.test')}</a>
+                <Link className={style.navLink} to={'/test'}>{t('header.test')}</Link>
                 <Link className={style.navLink} to={'/guide'}>{t('header.guide')}</Link>
                 <a className={style.navLink} href='#questions'>{t('header.questions')}</a>
                 <Link className={style.navLink} to={"/articles"}>{t('header.articles')}</Link>

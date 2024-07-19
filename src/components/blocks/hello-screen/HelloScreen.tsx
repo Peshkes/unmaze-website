@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './helloScreen.module.css'
+import {Link} from "react-router-dom";
 
 const HelloScreen = () => {
     return (
@@ -11,7 +12,7 @@ const HelloScreen = () => {
                 <img className={style.mess} src={require('../../../assets/mess1.webp')} alt="App Screen"/>
             </div>
             <div className={"button"}>
-                <a href="#">Скачать приложение<span className="arrow">→</span></a>
+                <Link to="/test">Скачать приложение<span className="arrow">→</span></Link>
             </div>
         </div>
     );

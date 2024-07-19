@@ -1,0 +1,36 @@
+.block{
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.mess {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    width: 40%;
+    object-fit: contain;
+    transform: translateY(-35%);
+    z-index: -10;
+}
+
+.block p{
+    font-size: 29px;
+    color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .block p {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .block p {
+        font-size: 90px;
+    }
+}

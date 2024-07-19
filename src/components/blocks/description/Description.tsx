@@ -26,7 +26,7 @@ const data: Array<descriptionData> = [
 
 const Description = () => {
     return (
-        <div className={`${style.block} wrapper`}>
+        <div id={'aboutus'} className={`${style.block} wrapper`}>
             <img className={style.mess} src={require('../../../assets/mess2.webp')}/>
             <h2>unmaze – это</h2>
             <div className={style.grid}>
