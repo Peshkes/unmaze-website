@@ -1,0 +1,46 @@
+.block{
+    position: relative;
+}
+
+.mess {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40%;
+    object-fit: contain;
+    z-index: -10;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10%);
+    }
+}
+
+.block h2 > a {
+    color: #F9E053;
+    display: inline-block; /* This is important to ensure the transform works properly */
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.block h2 > a:hover {
+    animation: jump 1s ease-in-out infinite;
+}
+
+@media screen and (min-width: 768px) {
+    .mess {
+        top: 30%;
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    .mess {
+        top: 20%;
+        max-width: 800px;
+    }
+}
