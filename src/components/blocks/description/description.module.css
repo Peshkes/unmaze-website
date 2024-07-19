@@ -1,0 +1,74 @@
+.block{
+    position: relative;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    text-transform: none;
+}
+
+.subBlock{
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.subBlock:hover{
+    background-color: black;
+    color: white;
+}
+
+.subBlock h3{
+    margin-top: 0;
+}
+
+.subBlock p{
+    margin-bottom: 0;
+}
+
+.mess {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    object-fit: contain;
+    transform: translateY(-35%);
+    z-index: -10;
+}
+
+@media screen and (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .subBlock{
+        padding: 30px;
+    }
+
+}
+
+@media screen and (min-width: 100px) {
+    .mess{
+        width: 30%;
+        max-width: 600px;
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .subBlock{
+        padding: 40px;
+    }
+
+
+}
