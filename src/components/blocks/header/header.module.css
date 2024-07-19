@@ -1,0 +1,154 @@
+.block{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 12px 12px;
+}
+
+.mobileBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoBlock{
+    height: 20px;
+}
+
+.logo{
+    fill: white;
+}
+
+.indoor {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, max-height 0.5s ease-in-out;
+    transform-origin: top;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.indoor.open {
+    opacity: 1;
+    max-height: 400px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.centerLinks{
+    display: flex;
+    flex-direction: column;
+}
+
+.leftEmpty, .rightEmpty{
+    height: 20px;
+}
+
+.navLink {
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+@media(min-width: 1000px){
+    .block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: transparent;
+    }
+
+    .logoBlock {
+        position: absolute;
+        left: 55px;
+        height: 80px;
+        width: 110px;
+    }
+
+    .logo{
+        fill: black;
+    }
+
+    .indoor {
+        width: 50%;
+        background-color: black;
+        padding: 20px;
+        min-width: 670px;
+        opacity: 1;
+        max-height: unset;
+        overflow: hidden;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .block nav{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        height: 20px;
+    }
+
+    .navLink {
+        margin: 0 10px;
+    }
+
+    .centerLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .rightEmpty, .leftEmpty {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1210px) {
+    .logoBlock{
+        height: 100px;
+        width: 200px;
+    }
+
+}
+
+@media screen and (min-width: 1325px) {
+    .logoBlock{
+        height: 150px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1661px) {
+    .nav{
+        justify-content: space-between;
+    }
+    .rightEmpty, .leftEmpty {
+        display: block;
+    }
+
+    .lastMenuItem{
+        position: absolute;
+        right: 0;
+    }
+
+}
