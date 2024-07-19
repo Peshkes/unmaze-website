@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import style from './header.module.css'
 import HeaderList from "./HeaderList";
 import BurgerIcon from "../burger/BurgerIcon";
+import LanguageSwitcher from "../language-switcher/LanguageSwitcher";
 
 const HeaderBlock = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -59,6 +60,9 @@ const HeaderBlock = () => {
             </div>
             <div className={`${style.indoor} ${menuOpen && style.open}`}>
                 <HeaderList/>
+            </div>
+            <div className={style.desktopSwitcher}>
+                <LanguageSwitcher/>
             </div>
         </div>
     );

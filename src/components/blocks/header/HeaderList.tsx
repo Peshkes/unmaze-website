@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import style from './header.module.css';
+import LanguageSwitcher from "../language-switcher/LanguageSwitcher";
 
 const HeaderList = () => {
     const { t } = useTranslation();
@@ -19,6 +20,7 @@ const HeaderList = () => {
             </div>
             <div className={style.rightEmpty}></div>
             <a className={`${style.navLink} ${style.lastMenuItem}`} href='#footer'>{t('header.writeToUs')}</a>
+            <LanguageSwitcher/>
         </nav>
     );
 };

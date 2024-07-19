@@ -1,26 +1,22 @@
 import React from 'react';
 import style from './howDetect.module.css'
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const HowDetect = () => {
+    const { t } = useTranslation();
     return (
         <div id={'dyslexia'} className={`${style.block} wrapper`}>
-            <h2>Как выявить дислексию у ребенка?</h2>
+            <h2>{t('howDetect.title')}</h2>
             <div className={style.child}>
                 <div className={style.container}>
-                    <h3>Общие признаки</h3>
+                    <h3>{t('howDetect.subtitle')}</h3>
                     <ul>
-                        <li>хорошо выражает свои мысли, но читает и пишет с ошибками</li>
-                        <li>его считают ленивым и невнимательным</li>
-                        <li>талантлив в искусстве, музыке, спорте</li>
-                        <li>лучше всего усваивает информацию через практический опыт и наблюдение</li>
-                        <li>сложно улавливает смысл прочитанного</li>
-                        <li>на письме и при чтении заметны повторы, добавления, перестановки, пропуски, замены букв и
-                            слов
-                        </li>
-                        <li>говорит с запинками</li>
-                        <li>не заканчивает предложения</li>
-                        <li>неразборчивый и изменчивый почерк</li>
+                        {[...Array(9)].map((_, index) => {
+                            return (
+                                <li key={index}>{t(`howDetect.list.${index}`)}</li>
+                            );
+                        })}
                     </ul>
                 </div>
                 <div className={style.imageBlock}>
@@ -28,7 +24,7 @@ const HowDetect = () => {
                 </div>
             </div>
             <div className={"button"}>
-                <Link to="/test">Пройти тест<span className="arrow">→</span></Link>
+                <Link to="/test">{t('howDetect.button')}<span className="arrow">→</span></Link>
             </div>
         </div>
     );

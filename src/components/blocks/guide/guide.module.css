@@ -25,17 +25,34 @@
     display: inline-block; /* This is important to ensure the transform works properly */
     position: relative;
     transition: transform 0.3s;
+    font-size: 14px;
 }
 
 .block h2 > a:hover {
     animation: jump 1s ease-in-out infinite;
 }
 
+.block a{
+
+}
+
 @media screen and (min-width: 768px) {
+
+    .block h2 > a{
+        font-size: 16px;
+    }
+
     .mess {
         top: 30%;
     }
 
+}
+
+
+@media screen and (min-width: 1220px) {
+    .block h2 > a{
+        font-size: 90px;
+    }
 }
 
 @media screen and (min-width: 1500px) {
