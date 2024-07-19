@@ -3,8 +3,8 @@ import style from './faq.module.css'
 
 const Faq = () => {
     return (
-        <div>
-
+        <div className={`${style.block} wrapper`}>
+            <h2>FAQ</h2>
         </div>
     );
 };
