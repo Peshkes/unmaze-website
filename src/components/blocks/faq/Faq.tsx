@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import style from './Faq.module.css'
+import style from './faq.module.css'
 import QuestionBlock from "./questionBlock/QuestionBlock";
 import {useTranslation} from "react-i18next";
 
