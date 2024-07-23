@@ -8,8 +8,8 @@ const Guide = () => {
     return (
         <div className={`${style.block} wrapper`}>
             <img className={style.mess} src={require('../../../assets/mess2.webp')}/>
-            <h2>{t('guide.1')}<br/><br/>
-                {t('guide.2')} <Link to="/test">{t('guide.3')}</Link>{t('guide.3')}</h2>
+            <h2>{t('guide.0')}<br/><br/>
+                {t('guide.1')} <Link to="/test">{t('guide.2')}</Link>{t('guide.3')}</h2>
             <div className={"button"}>
                 <Link to="/test">{t('guide.button')}<span className="arrow">→</span></Link>
             </div>

@@ -21,11 +21,12 @@
 }
 
 .block h2 > a {
-    color: #F9E053;
+    color: black;
+    font-weight: bold;
     display: inline-block; /* This is important to ensure the transform works properly */
     position: relative;
     transition: transform 0.3s;
-    font-size: 14px;
+    font-size: 29px;
 }
 
 .block h2 > a:hover {
@@ -39,7 +40,7 @@
 @media screen and (min-width: 768px) {
 
     .block h2 > a{
-        font-size: 16px;
+        font-size: 50px;
     }
 
     .mess {

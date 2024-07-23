@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
 
     return (
         <div className={style.button} onClick={toggleLanguage}>
-            <p>{language === 'en' ? 'Русский' : 'English'}</p>
+            <p className={"clickable"}>{language.includes('en') ? 'русский' : 'english'}</p>
         </div>
     );
 };

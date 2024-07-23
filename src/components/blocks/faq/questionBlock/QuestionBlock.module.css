@@ -1,0 +1,124 @@
+.block {
+    cursor: pointer;
+}
+
+.block h4 {
+    margin: 0;
+    text-transform: none;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    transition: max-height 1s ease-in-out;
+    margin: 10px 0;
+}
+
+.answer p {
+    margin: 15px;
+}
+
+.block.open .answer {
+    max-height: 100px;
+    transition: max-height 1s ease-in-out;
+}
+
+.cross {
+    position: relative;
+    margin-left: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+}
+
+.horizontal {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.vertical {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.rotated .horizontal {
+    transform: rotate(45deg);
+}
+
+.rotated .vertical {
+    transform: rotate(135deg);
+}
+
+@media screen and (min-width: 768px) {
+    .block {
+        display: flex;
+        flex-direction: row;
+        cursor: default;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .question {
+        width: 30%;
+        align-items: start;
+    }
+
+    .question h4{
+        font-weight: normal;
+    }
+
+    .answer {
+        max-height: none;
+        width: 70%;
+        padding: 0 0 0 50px;
+        background-color: transparent;
+        margin: 0;
+    }
+
+    .block.open .answer {
+        max-height: none;
+    }
+
+    .answer p {
+        font-size: 50px;
+        margin: -22px 0 0;
+    }
+
+    .cross {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .block {
+        margin-bottom: 50px;
+    }
+
+    .answer{
+        padding: 0 0 0 30px;
+    }
+
+    .answer p {
+        font-size: 70px;
+        margin: -30px 0 0;
+    }
+}

@@ -5,10 +5,12 @@ import MainPage from "./components/pages/MainPage";
 import ErrorPage from "./components/pages/ErrorPage";
 import './libraries/i18next/i18n';
 import BeComingPage from "./components/pages/be-coming/BeComingPage";
+import Cursor from "./components/blocks/cursor/Cursor";
 
 function App() {
     return (
         <div className="App">
+            <Cursor/>
             <Routes>
                 <Route path={"/"} element={<MainPage/>}/>
                 {/*<Route path={"/articles"} element={<ArticlesPage/>}/>*/}

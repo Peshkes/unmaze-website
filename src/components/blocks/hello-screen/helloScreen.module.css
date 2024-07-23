@@ -58,7 +58,13 @@
 @media screen and (min-width: 1220px) {
     .imageBlock{
         height: 90vh;
+        max-height: 1000px;
     }
+
+    .imageBlock > img {
+        height: 95%;
+    }
+
     .mess {
         transform: translateY(-15%);
     }

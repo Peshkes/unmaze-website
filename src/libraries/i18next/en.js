@@ -1,12 +1,12 @@
 const en = {
     header: {
-        aboutUs: "About us",
-        dyslexia: "Dyslexia",
-        test: "Test",
-        guide: "Guide",
-        questions: "Questions",
-        articles: "Articles",
-        writeToUs: "Write to us"
+        aboutUs: "about us",
+        dyslexia: "dyslexia",
+        test: "test",
+        guide: "guide",
+        questions: "questions",
+        articles: "articles",
+        writeToUs: "write to us"
     },
     helloScreen: {
         title: "hello, we are unmaze — an application helps children with dyslexia",
@@ -32,7 +32,7 @@ const en = {
         }
     },
     howDetect: {
-        title: "HOW TO IDENTIFY DYSLEXIA IN A CHILD?",
+        title: "how to identify dyslexia in a child?",
         subtitle: "Common Signs",
         list: {
             0: "Expresses thoughts well but makes mistakes in reading and writing",
@@ -45,14 +45,43 @@ const en = {
             7: "Does not finish sentences",
             8: "Has illegible and inconsistent handwriting"
         },
+        secondSubtitle: "How do dyslexics see?",
+        secondDescription: "Hover over the letter to find out",
         button: "Take the Test"
     },
     guide: {
-        1: "IF YOU HAVE TAKEN THE TEST AND RECEIVED A POSITIVE RESULT, YOU PROBABLY HAVE MANY QUESTIONS, THE MAIN ONE BEING — WHAT TO DO NEXT",
-        2: "WE HAVE CREATED",
-        3: " A GUIDE FOR PARENTS",
-        4: "THAT WILL ANSWER ALL YOUR QUESTIONS",
+        0: "If you have taken the test and received a positive result, you probably have many questions, the main one being — what to do next",
+        1: "we have created",
+        2: " a guide for parents",
+        3: " that will answer all your questions",
         button: "Read the Guide"
+    },
+    faq: {
+        title: 'FAQ',
+        0: {
+            question: "Does Unmaze really help with dyslexia correction?",
+            answer: "we have not answered this question yet. We are working on it."
+        },
+        1: {
+            question: "How do the game mechanics work?",
+            answer: "we have not answered this question yet. We are working on it."
+        },
+        2: {
+            question: "What progress tracking metrics are available?",
+            answer: "we have not answered this question yet. We are working on it."
+        },
+        3: {
+            question: "Is the app paid?",
+            answer: "we have not answered this question yet. We are working on it."
+        }
+    },
+    videos: {
+        1: 'Progress',
+        2: 'Game Catalog',
+        3: 'Game',
+        4: 'Error',
+        5: 'Control',
+        6: 'Articles'
     }
 };
 
