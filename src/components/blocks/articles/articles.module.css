@@ -1,0 +1,44 @@
+.block {
+
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+
+.subBlock {
+    width: 100%;
+    aspect-ratio: 2/1;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.subBlock h3 {
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .articles {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .subBlock {
+        padding: 25px;
+        aspect-ratio: 2/1.5;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .subBlock {
+        padding: 30px;
+        aspect-ratio: auto;
+        height: 450px;
+    }
+}

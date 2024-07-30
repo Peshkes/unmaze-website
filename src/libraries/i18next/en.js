@@ -82,6 +82,9 @@ const en = {
         4: 'Error',
         5: 'Control',
         6: 'Articles'
+    },
+    articles: {
+        manePageTitle: 'read our articles:'
     }
 };
 
