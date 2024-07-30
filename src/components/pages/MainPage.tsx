@@ -18,7 +18,7 @@ const MainPage = () => {
             <HowDetect/>
             <Guide/>
             <Faq/>
-            <Articles/>
+            <Articles count={4} header={'manePageTitle'}/>
         </div>
     );
 };
