@@ -5,18 +5,23 @@
 
 html {
     scroll-behavior: smooth;
-    display: flex;
-    justify-content: center;
 }
 
 body{
     font-family: 'Manrope', sans-serif;
-    max-width: 2560px;
     background-color: white;
+    width: 100%;
+}
+
+.App{
+    max-width: 2560px;
+    margin: 0 auto;
 }
 
 h1, h2{
+    cursor: default;
     font-size: 29px;
+    line-height: 0.9;
     font-weight: normal;
     margin: 0 0 20px;
 }
@@ -41,11 +46,15 @@ h1, h2{
     text-transform: none;
     cursor: pointer;
     margin: 20px auto 0;
+}
+
+.button a{
     padding: 5px 30px;
 }
 
 .button .arrow {
     position: absolute;
+    pointer-events: none;
     right: 25px;
     transition: margin-left 0.3s ease-in-out;
 }
@@ -75,6 +84,7 @@ a{
 
 p, h3, h4, li, a{
     font-size: 14px;
+    cursor: default;
 }
 
 @media screen and (min-width: 768px) {
@@ -90,8 +100,11 @@ p, h3, h4, li, a{
 
     .button{
         font-size: 16px;
-        padding: 10px 55px;
         margin-top: 30px;
+    }
+
+    .button a{
+        padding: 15px 55px;
     }
 
     @keyframes moveArrow {
@@ -130,9 +143,13 @@ p, h3, h4, li, a{
     }
 
     .button{
+        height: max-content;
         font-size: 19px;
-        padding: 15px 90px;
         margin-top: 50px;
+    }
+
+    .button a{
+        padding: 15px 90px;
     }
 
     p, h4, li, a{

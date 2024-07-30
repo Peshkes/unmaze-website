@@ -28,6 +28,7 @@
     background-color: transparent;
     border-radius: 10px;
     margin-bottom: 13px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .nav div:last-child {
@@ -37,6 +38,7 @@
 .nav div p {
     margin: 0;
     font-size: 12px;
+    pointer-events: none;
 }
 
 .nav div:hover,
@@ -44,6 +46,7 @@
 .nav div:active {
     background-color: black;
     color: #f6f6f6;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .videoBlock {

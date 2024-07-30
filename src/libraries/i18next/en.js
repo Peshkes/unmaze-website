@@ -46,15 +46,15 @@ const en = {
             8: "Has illegible and inconsistent handwriting"
         },
         secondSubtitle: "How do dyslexics see?",
-        secondDescription: "Hover over the letter to find out",
-        button: "Take the Test"
+        secondDescription: "hover over the letter to find out",
+        button: "Take the test"
     },
     guide: {
-        0: "If you have taken the test and received a positive result, you probably have many questions, the main one being — what to do next",
+        0: "if you have taken the test and received a positive result, you probably have many questions, the main one being — what to do next",
         1: "we have created",
         2: " a guide for parents",
         3: " that will answer all your questions",
-        button: "Read the Guide"
+        button: "Read the guide"
     },
     faq: {
         title: 'FAQ',

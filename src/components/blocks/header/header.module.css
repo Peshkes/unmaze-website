@@ -29,6 +29,7 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    max-width: 850px;
 }
 
 .indoor.open {
@@ -140,7 +141,7 @@
 
 @media screen and (min-width: 1050px) {
     .logoBlock {
-        width: 12%;
+        width: 11%;
     }
 }
 
@@ -152,15 +153,6 @@
         right: 55px;
     }
 
-}
-
-@media screen and (min-width: 1340px) {
-    .navLink{
-        font-size: 22px;
-    }
-}
-
-@media screen and (min-width: 1661px) {
     .nav{
         justify-content: space-between;
     }

@@ -10,7 +10,6 @@ import Cursor from "./components/blocks/cursor/Cursor";
 function App() {
     return (
         <div className="App">
-            <Cursor/>
             <Routes>
                 <Route path={"/"} element={<MainPage/>}/>
                 {/*<Route path={"/articles"} element={<ArticlesPage/>}/>*/}

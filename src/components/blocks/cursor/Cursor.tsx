@@ -1,73 +1,86 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import style from './cursor.module.css';
 
 const Cursor = () => {
     const circleRef = useRef<HTMLDivElement>(null);
-    const [cursorSize, setCursorSize] = useState(20);
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1220);
-    const positionRef = useRef({ x: 0, y: 0 });
-    const requestRef = useRef<number | null>(null);
+    const [state, setState] = useState({
+        cursorSize: 20,
+        isDesktop: window.innerWidth > 1220,
+        circlePosition: { x: 0, y: 0 },
+        mousePosition: { x: 0, y: 0 }
+    });
+
+    const handleResize = useCallback(() => {
+        const isDesktop = window.innerWidth > 1024;
+        if (isDesktop !== state.isDesktop) {
+            setState((prevState) => ({ ...prevState, isDesktop }));
+        }
+    }, [state.isDesktop]);
+
+    const handleMouseEnterLeave = useCallback((event: MouseEvent) => {
+        if ((event.target as Element).matches('button, a, .clickable, .button, .arrow')) {
+            const cursorSize = event.type === 'mouseover' ? 100 : 20;
+            if (cursorSize !== state.cursorSize) {
+                setState((prevState) => ({ ...prevState, cursorSize }));
+            }
+        }
+    }, [state.cursorSize]);
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsDesktop(window.innerWidth > 1024);
-        };
-
-        const handleMouseEnter = (event: MouseEvent) => {
-            if ((event.target as Element).matches('button, a, .clickable, .button')) {
-                setCursorSize(100);
-            }
-        };
-
-        const handleMouseLeave = (event: MouseEvent) => {
-            if ((event.target as Element).matches('button, a, .clickable, .button')) {
-                setCursorSize(20);
-            }
-        };
-
         window.addEventListener('resize', handleResize);
-        window.addEventListener('mouseover', handleMouseEnter);
-        window.addEventListener('mouseout', handleMouseLeave);
+        window.addEventListener('mouseover', handleMouseEnterLeave);
+        window.addEventListener('mouseout', handleMouseEnterLeave);
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            window.removeEventListener('mouseover', handleMouseEnter);
-            window.removeEventListener('mouseout', handleMouseLeave);
+            window.removeEventListener('mouseover', handleMouseEnterLeave);
+            window.removeEventListener('mouseout', handleMouseEnterLeave);
         };
-    }, []);
+    }, [handleResize, handleMouseEnterLeave]);
 
     useEffect(() => {
+        let circleX = state.circlePosition.x;
+        let circleY = state.circlePosition.y;
+
         const handleMouseMove = (event: MouseEvent) => {
-            positionRef.current = {
-                x: event.clientX - cursorSize / 2,
-                y: event.clientY - cursorSize / 2,
-            };
+            setState((prevState) => ({
+                ...prevState,
+                mousePosition: { x: event.clientX, y: event.clientY }
+            }));
         };
 
-        const updatePosition = () => {
+        const animate = () => {
             if (circleRef.current) {
-                circleRef.current.style.transform = `translate(${positionRef.current.x}px, ${positionRef.current.y}px)`;
+                circleX += ((state.mousePosition.x - state.cursorSize / 2) - circleX) * 0.07;
+                circleY += ((state.mousePosition.y - state.cursorSize / 2) - circleY) * 0.07;
+                circleRef.current.style.transform = `translate(${circleX}px, ${circleY}px)`;
+                setState((prevState) => ({
+                    ...prevState,
+                    circlePosition: { x: circleX, y: circleY }
+                }));
+
+                requestAnimationFrame(animate);
             }
-            requestRef.current = requestAnimationFrame(updatePosition);
         };
 
         window.addEventListener('mousemove', handleMouseMove);
-        requestRef.current = requestAnimationFrame(updatePosition);
+        animate();
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
-            if (requestRef.current) {
-                cancelAnimationFrame(requestRef.current);
-            }
         };
-    }, [cursorSize]);
+    }, [state.cursorSize, state.mousePosition]);
 
-    if (!isDesktop) {
+    if (!state.isDesktop) {
         return null;
     }
 
     return (
-        <div ref={circleRef} className={style.inversionCircle} style={{width: cursorSize + 'px', height: cursorSize + 'px'}}/>
+        <div
+            ref={circleRef}
+            className={style.inversionCircle}
+            style={{ width: state.cursorSize + 'px', height: state.cursorSize + 'px' }}
+        />
     );
 };
 

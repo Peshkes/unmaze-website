@@ -23,7 +23,7 @@
 .block h2 > a {
     color: black;
     font-weight: bold;
-    display: inline-block; /* This is important to ensure the transform works properly */
+    display: inline-block;
     position: relative;
     transition: transform 0.3s;
     font-size: 29px;

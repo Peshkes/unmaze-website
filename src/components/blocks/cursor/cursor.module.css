@@ -5,10 +5,8 @@
     pointer-events: none;
     mix-blend-mode: difference;
     background: white;
-    will-change: transform;
-    transition: width 0.5s, height 0.5s, transform 0.5s;
+    will-change: transform, height, width;
+    transition: width 0.5s, height 0.5s;
     transition-timing-function: ease-in-out;
     transform-origin: center center;
 }
-
-
