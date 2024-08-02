@@ -8,7 +8,7 @@ const Description = () => {
     return (
         <div id={'aboutus'} className={`${style.block} wrapper`}>
             <img className={style.mess} src={require('../../../assets/mess2.webp')}/>
-            <h2>{t('description.title')}</h2>
+            <h2><span className={'unmaze'}>un</span>maze{t('description.title')}</h2>
             <div className={style.grid}>
                 {[...Array(4)].map((_, index) => (
                     <div className={style.subBlock} key={index}>

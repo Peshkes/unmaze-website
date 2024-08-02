@@ -4,12 +4,12 @@ import style from './example.module.css';
 const Example = () => {
     const renderItems = () => {
         const items = [];
-        for (let i = 0; i < 24; i++) {
+        for (let i = 1; i < 25; i++) {
             items.push(
                 <div key={i} className={style.item}>
-                    <img src={require('../../../../assets/mess1.webp')}/>
+                    <img src={require(`../../../../assets/alphabet/${i}.webp`)}/>
                     <div className={style.hiddenContent}>
-                        <img src={require('../../../../assets/mess2.webp')}/>
+                        <img src={require(`../../../../assets/alphabet/${i}a.webp`)}/>
                     </div>
                 </div>
             );

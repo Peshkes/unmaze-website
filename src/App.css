@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Emotical';
+    src: url('../src/assets/MyEmoticalTypeface.ttf') format('truetype');
+}
+
 :root{
     --tablet: 768px;
     --desktop: 1220px;
@@ -28,12 +33,12 @@ h1, h2{
 
 .wrapper{
     padding: 0 15px;
-    margin-top: 25px
+    margin-top: 40px
 }
 
 .button{
     position: relative;
-    height: 26px;
+    height: 30px;
     min-width: 180px;
     width: fit-content;
     font-size: 12px;
@@ -49,13 +54,13 @@ h1, h2{
 }
 
 .button a{
-    padding: 5px 30px;
+    padding: 10px 50px;
 }
 
 .button .arrow {
     position: absolute;
     pointer-events: none;
-    right: 25px;
+    right: 20px;
     transition: margin-left 0.3s ease-in-out;
 }
 
@@ -65,6 +70,12 @@ h1, h2{
 
 .button:active .arrow {
     animation: moveAway 1.2s ease-in-out;
+}
+
+.unmaze{
+    font-family: "Emotical", serif;
+    font-size: 44px;
+    line-height: 5px;
 }
 
 @keyframes moveArrow {
@@ -85,6 +96,7 @@ a{
 p, h3, h4, li, a{
     font-size: 14px;
     cursor: default;
+    font-weight: normal;
 }
 
 @media screen and (min-width: 768px) {
@@ -95,7 +107,7 @@ p, h3, h4, li, a{
 
     .wrapper{
         padding: 0 30px;
-        margin-top: 50px
+        margin-top: 60px
     }
 
     .button{
@@ -105,6 +117,10 @@ p, h3, h4, li, a{
 
     .button a{
         padding: 15px 55px;
+    }
+
+    .unmaze{
+        font-size: 74px;
     }
 
     @keyframes moveArrow {
@@ -139,7 +155,7 @@ p, h3, h4, li, a{
 
     .wrapper{
         padding: 0 55px;
-        margin-top: 70px
+        margin-top: 90px
     }
 
     .button{
@@ -159,6 +175,10 @@ p, h3, h4, li, a{
     h3{
         font-size: 42px;
         margin-bottom: 20px;
+    }
+
+    .unmaze{
+        font-size: 136px;
     }
 
     @keyframes moveArrow {
