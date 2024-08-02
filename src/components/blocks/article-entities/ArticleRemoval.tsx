@@ -1,13 +1,14 @@
 import React from 'react';
+import style from './articles-entites.module.css'
 
 type RemovalProps = {
-    text: string
+    text?: string
     image?: string
 }
 
 const ArticleRemoval = ({text, image}: RemovalProps) => {
     return (
-        <div>
+        <div className={style.removalBlock}>
             {image && <img src={image}/>}
             <h4>{text}</h4>
         </div>

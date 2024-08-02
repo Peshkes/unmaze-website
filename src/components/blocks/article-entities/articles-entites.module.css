@@ -1,3 +1,23 @@
-.block{
-    margin: 18px 0;
+.imageBlock img {
+    margin: 0 -15px;
+    width: Calc(100% + 30px);
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.textBlock {
+    background-color: #F6F6F6;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.textBlock h3 {
+    text-align: left;
+    padding: 0;
+}
+
+.removalBlock h4{
+    font-size: 29px;
+    margin: 0;
 }

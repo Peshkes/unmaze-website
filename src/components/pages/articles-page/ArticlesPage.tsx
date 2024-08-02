@@ -2,25 +2,20 @@ import React, {useEffect, useState} from 'react';
 import {FakeBase} from "../../../api/FakeBase";
 import {Link} from "react-router-dom";
 import style from './articlespage.module.css'
+import {ArticlePreview} from "../../../api/types";
+import {useTranslation} from "react-i18next";
 
-export type ArticlePreview = {
-    id: number
-    link: string
-    ru_category: string
-    en_category: string
-    en_title: string
-    ru_title: string
-    image: string
-}
 
 const ArticlesPage = () => {
     const [articles, setArticles] = useState<Array<ArticlePreview>>([]);
     const [page, setPage] = useState(1);
     const articlesPerPage = 8;
-    const language = navigator.language.startsWith('ru') ? 'ru' : 'en';
+    const {i18n} = useTranslation();
+    const currentLanguage = i18n.language as 'ru' | 'en';
+
 
     useEffect(() => {
-        FakeBase.getFakeArticlesPreviewForArticlePage().then((data) => {
+        FakeBase.getArticlesPreview().then((data) => {
             setArticles(data);
         });
     }, []);
@@ -53,8 +48,8 @@ const ArticlesPage = () => {
                     <div key={article.id} className={style.article}>
                         <Link to={`/articles/${article.link}`}>
                             <img src={article.image}/>
-                            <p>{language === 'ru' ? article.ru_category : article.en_category}</p>
-                            <h3>{language === 'ru' ? article.ru_title : article.en_title}</h3>
+                            <p>{currentLanguage === 'ru' ? article.ru_category : article.en_category}</p>
+                            <h3>{currentLanguage === 'ru' ? article.ru_title : article.en_title}</h3>
                         </Link>
                     </div>
                 ))}

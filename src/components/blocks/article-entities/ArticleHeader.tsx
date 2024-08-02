@@ -1,7 +1,7 @@
 import React from 'react';
 
 type HeaderProps = {
-    text: string
+    text?: string
     image?: string
 }
 

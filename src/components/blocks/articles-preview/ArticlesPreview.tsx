@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './articles.module.css'
 import {useTranslation} from "react-i18next";
 import {FakeBase} from "../../../api/FakeBase";
-import {ArticlePreview} from "../../pages/articles-page/ArticlesPage";
+import {ArticlePreview} from "../../../api/types";
 
 type ArticlesProps = {
     count: number
@@ -15,7 +15,7 @@ const ArticlesPreview = ({count, header}: ArticlesProps) => {
     const [articles, setArticles] = useState<Array<ArticlePreview>>([]);
 
     useEffect(() => {
-        FakeBase.getFakeArticlesPreviewForMainPage().then((data) => setArticles(data))
+        FakeBase.getArticlesPreview(count).then((data) => setArticles(data))
     }, []);
 
     const getTitle = (article: ArticlePreview) => {

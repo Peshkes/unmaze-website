@@ -8,6 +8,7 @@ import BeComingPage from "./components/pages/be-coming/BeComingPage";
 import Footer from "./components/blocks/footer/Footer";
 import HeaderBlock from "./components/blocks/header/HeaderBlock";
 import ArticlesPage from "./components/pages/articles-page/ArticlesPage";
+import ArticlePage from "./components/pages/article-page/ArticlePage";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 {/*<Route path={"/test"} element={<TestPage/>}/>*/}
                 {/*<Route path={"/guide"} element={<GuidePage/>}/>*/}
                 <Route path={"/articles"} element={<ArticlesPage/>}/>
+                <Route path={"/articles/:article"} element={<ArticlePage/>}/>
                 <Route path={"/test"} element={<BeComingPage/>}/>
                 <Route path={"/guide"} element={<BeComingPage/>}/>
                 <Route path={"*"} element={<ErrorPage/>}/>
