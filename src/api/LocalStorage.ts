@@ -16,20 +16,20 @@ export class LocalStorage {
     }
 
     static getReadArticles(){
-        return localStorage.getItem("read-articles");
+        return localStorage.getItem("read-articles-preview");
     }
 
     static addReadArticle(article: number){
-        let readArticles = localStorage.getItem("read-articles");
+        let readArticles = localStorage.getItem("read-articles-preview");
         if(readArticles){
             readArticles = readArticles + "," + article;
         }else{
             readArticles = article + "";
         }
-        localStorage.setItem("read-articles", readArticles);
+        localStorage.setItem("read-articles-preview", readArticles);
     }
 
     static clearReadArticles(){
-        localStorage.removeItem("read-articles");
+        localStorage.removeItem("read-articles-preview");
     }
 }
