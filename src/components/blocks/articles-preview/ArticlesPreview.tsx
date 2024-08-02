@@ -2,26 +2,20 @@ import React, {useEffect, useState} from 'react';
 import style from './articles.module.css'
 import {useTranslation} from "react-i18next";
 import {FakeBase} from "../../../api/FakeBase";
-
-export type ArticlePreview = {
-    id: number
-    en_title: string
-    ru_title: string
-    image: string
-}
+import {ArticlePreview} from "../../pages/articles-page/ArticlesPage";
 
 type ArticlesProps = {
     count: number
     header: string
 }
 
-const Articles = ({count, header}: ArticlesProps) => {
+const ArticlesPreview = ({count, header}: ArticlesProps) => {
     const {i18n, t} = useTranslation();
     const currentLanguage = i18n.language;
     const [articles, setArticles] = useState<Array<ArticlePreview>>([]);
 
     useEffect(() => {
-        FakeBase.getFakeArticlesPreview().then((data) => setArticles(data))
+        FakeBase.getFakeArticlesPreviewForMainPage().then((data) => setArticles(data))
     }, []);
 
     const getTitle = (article: ArticlePreview) => {
@@ -42,4 +36,4 @@ const Articles = ({count, header}: ArticlesProps) => {
     );
 };
 
-export default Articles;
+export default ArticlesPreview;
