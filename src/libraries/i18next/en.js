@@ -9,11 +9,12 @@ const en = {
         writeToUs: "write to us"
     },
     helloScreen: {
-        title: "hello, we are unmaze — an application helps children with dyslexia",
+        title1: "hello, we are ",
+        title2: " — an application helps children with dyslexia",
         button: "Download the app"
     },
     description: {
-        title: "unmaze is",
+        title: " is",
         0: {
             title: "Gamified Tasks",
             text: "The child completes tasks level by level. The gamified format helps maintain interest in the activities, shifting the focus from success to the process."
@@ -84,7 +85,13 @@ const en = {
         6: 'Articles'
     },
     articles: {
-        manePageTitle: 'read our articles:'
+        manePageTitle: 'read our articles-preview:'
+    },
+    footer: {
+        business: "business offers",
+        call: "call us",
+        cooperation: "cooperation",
+        privacy: "privacy policy"
     }
 };
 
