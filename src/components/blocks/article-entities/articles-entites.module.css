@@ -17,7 +17,24 @@
     padding: 0;
 }
 
-.removalBlock h4{
+.removalBlock h4 {
     font-size: 29px;
     margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .removalBlock h4 {
+        font-size: 50px;
+    }
+
+    .imageBlock img {
+        aspect-ratio: 2/1;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .removalBlock h4 {
+        font-size: 90px;
+    }
+
 }

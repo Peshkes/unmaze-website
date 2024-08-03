@@ -1,7 +1,32 @@
-.block{
+.block {
     margin: 18px 0;
 }
 
 .page {
     padding-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .block {
+        margin: 28px 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .page {
+        padding-top: 0;
+        margin-top: 30px;
+    }
+
+    .block:first-child {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .block {
+        margin: 38px 0;
+    }
+
+
 }
