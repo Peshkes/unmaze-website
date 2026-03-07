@@ -1,0 +1,132 @@
+.child {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.child h3 {
+    margin-top: 0;
+    text-transform: none;
+}
+
+.child p {
+    display: none;
+}
+
+.container ul {
+    list-style: disc outside;
+    padding-left: 20px;
+}
+
+.container li {
+    margin-bottom: 10px;
+    text-transform: lowercase;
+}
+
+.imageBlock {
+    margin-top: 20px;
+}
+
+.imageBlock img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.exampleBlock {
+    display: none;
+}
+
+.largeScreenBlock {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    .child {
+        flex-direction: row;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    .container ul {
+        padding-left: 30px;
+    }
+
+    .imageBlock {
+        max-width: 40%;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .imageBlock {
+        max-width: 30%;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .container {
+        padding: 40px;
+        width: 70%;
+        box-sizing: border-box;
+        margin-right: 10px;
+    }
+
+    .container ul {
+        padding-left: 60px;
+    }
+
+    .imageBlock {
+        margin-left: 10px;
+        background-color: #F6F6F6;
+        border-radius: 20px;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 40px;
+        margin-top: 0;
+        max-width: none;
+    }
+
+    .imageBlock > img {
+        display: none;
+    }
+
+    .exampleBlock {
+        display: block;
+    }
+
+    .child p {
+        display: block;
+        text-transform: none;
+    }
+}
+
+@media screen and (min-width: 1770px) {
+
+    .imageBlock p, .imageBlock h3 {
+        display: none;
+    }
+
+    .largeScreenBlock {
+        display: block;
+    }
+
+    .largeScreenBlock h3 {
+        margin-top: 22px;
+    }
+
+    .imageBlock {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+    }
+}

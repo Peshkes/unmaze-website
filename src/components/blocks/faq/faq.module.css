@@ -1,0 +1,15 @@
+.faq {
+
+}
+
+.faqBlock {
+    z-index: 10;
+    position: relative;
+}
+
+@media screen and (min-width: 1220px) {
+    .faqBlock {
+        margin-bottom: -50px;
+    }
+
+}

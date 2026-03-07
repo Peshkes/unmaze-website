@@ -1,0 +1,85 @@
+.block {
+    text-align: center;
+}
+
+.block h2{
+    font-size: 14px;
+}
+
+.selectorBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.selectorBlock span{
+    font-size: 11px;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.radioGroup label {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.labels{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.radio0 {
+    width: 15px;
+}
+
+.radio1 {
+    width: 20px;
+}
+
+.radio2 {
+    width: 28px;
+}
+
+.radio3 {
+    width: 38px;
+}
+
+.radioGroup input[type="radio"] {
+    display: none; /* Скрываем стандартные радиокнопки */
+}
+
+.radioGroup .customRadio {
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.radioGroup input[type="radio"]:checked + .customRadio {
+    background-color: black;
+}
+
+
+@media (min-width: 768px) {
+    .selectorBlock {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .selectorBlock span {
+        font-size: 14px;
+    }
+}
