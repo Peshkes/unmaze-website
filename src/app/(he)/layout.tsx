@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { manrope, emotical, notoSansHebrew } from '@/lib/fonts'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { Cursor } from '@/components/layout/cursor'
 import { RevealProvider } from '@/components/ui/reveal-provider'
 import '../globals.css'
+
+export const viewport: Viewport = {
+  viewportFit: 'cover',
+  themeColor: '#000000',
+}
 
 export const metadata: Metadata = {
   title: {

@@ -13,13 +13,16 @@ interface HeaderProps {
 
 export function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [lockedHeight, setLockedHeight] = useState<number | null>(null)
   const dict = t(locale)
   const prefix = getLocalePrefix(locale)
 
   useEffect(() => {
     if (mobileOpen) {
+      setLockedHeight(window.innerHeight)
       document.body.style.overflow = 'hidden'
     } else {
+      setLockedHeight(null)
       document.body.style.overflow = ''
     }
     return () => {
@@ -39,16 +42,15 @@ export function Header({ locale }: HeaderProps) {
 
   return (
     <header>
-      {/* ── Mobile: thin black bar (above overlay) ── */}
-      <div className="fixed top-0 z-[1001] flex w-full items-center justify-between bg-black px-4 py-3 lg:hidden">
-        <Link href={prefix || '/'} className="relative z-[1001]">
+      {/* ── Mobile: header bar (always visible) ── */}
+      <div className="fixed top-0 z-[1001] flex w-full items-center justify-between bg-black/95 px-4 py-3 lg:hidden">
+        <Link href={prefix || '/'}>
           <Logo className="h-5 w-auto text-white" />
         </Link>
-
         <button
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          className="relative z-[1001] flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
+          className="flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
         >
           <span
             className={`block h-[2px] w-5 bg-white transition-all duration-300 ease-out ${
@@ -68,45 +70,59 @@ export function Header({ locale }: HeaderProps) {
         </button>
       </div>
 
-      {/* ── Mobile: full-screen overlay ── */}
+      {/* ── Mobile: menu panel (slides from under header) ── */}
       <div
-        className={`fixed inset-0 z-[1000] flex flex-col bg-black/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
+        className={`fixed left-0 w-full z-[1000] transition-all duration-500 lg:hidden ${
           mobileOpen
-            ? 'pointer-events-auto opacity-100'
-            : 'pointer-events-none opacity-0'
+            ? 'pointer-events-auto visible opacity-100'
+            : 'pointer-events-none invisible opacity-0'
         }`}
+        style={{
+          top: '56px',
+          height: lockedHeight ? `${lockedHeight - 56}px` : 'calc(100vh - 56px)',
+        }}
       >
-        <nav className="flex flex-1 flex-col items-start justify-center gap-6 px-8">
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-2xl font-light text-white no-underline transition-all duration-500 hover:opacity-70"
-              style={{
-                transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms',
-                opacity: mobileOpen ? 1 : 0,
-                transform: mobileOpen ? 'translateY(0)' : 'translateY(16px)',
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
+        {/* Background with diagonal cut */}
         <div
-          className="px-8 pb-10 transition-all duration-500"
-          style={{
-            transitionDelay: mobileOpen ? `${navLinks.length * 60}ms` : '0ms',
-            opacity: mobileOpen ? 1 : 0,
-            transform: mobileOpen ? 'translateY(0)' : 'translateY(16px)',
-          }}
-        >
-          <div className="mb-6">
-            <LanguageSwitcher locale={locale} />
-          </div>
-          <div className="cta-button !mx-0 !mt-0">
-            <a href="#" onClick={() => setMobileOpen(false)}>
+          className="absolute inset-0 bg-black/95"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 93%)' }}
+        />
+
+        <div className="relative flex h-full flex-col">
+          <nav className="flex flex-1 flex-col items-start justify-center gap-6 px-8 pb-20">
+            {navLinks.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-2xl font-light text-white no-underline transition-all duration-500 hover:opacity-70"
+                style={{
+                  transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms',
+                  opacity: mobileOpen ? 1 : 0,
+                  transform: mobileOpen ? 'translateY(0)' : 'translateY(16px)',
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div
+            className="px-8 pb-28 transition-all duration-500"
+            style={{
+              transitionDelay: mobileOpen ? `${navLinks.length * 60}ms` : '0ms',
+              opacity: mobileOpen ? 1 : 0,
+              transform: mobileOpen ? 'translateY(0)' : 'translateY(16px)',
+            }}
+          >
+            <div className="mb-6">
+              <LanguageSwitcher locale={locale} />
+            </div>
+            <a
+              href="#"
+              onClick={() => setMobileOpen(false)}
+              className="inline-block rounded-lg border border-white px-10 py-3 text-sm text-white no-underline transition-colors hover:bg-white hover:text-black"
+            >
               {dict.hero.cta}
             </a>
           </div>
